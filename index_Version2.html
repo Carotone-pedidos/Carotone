@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <title>¿Compraste Carotone?</title>
+  <meta name="theme-color" content="#A67C52">
+  <meta name="description" content="Confirma tu compra de Carotone y continúa tu experiencia exclusiva.">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'REEMPLAZA_POR_TU_PIXEL_ID'); // Reemplaza con tu ID de Pixel real
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=REEMPLAZA_POR_TU_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+  <style>
+    :root {
+      --primary: #A67C52;
+      --secondary: #D9C3A1;
+      --accent: #6F4E37;
+      --background: #FAF3E3;
+      --success: #C1B497;
+      --danger: #7D5E3C;
+    }
+    html,body {
+      margin: 0; padding: 0;
+      background: var(--background);
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      color: var(--accent);
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 2.5em 1em 1em 1em;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .brand-title {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5em;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+    .question {
+      font-size: 1.3em;
+      margin-bottom: 2.5em;
+      font-weight: 500;
+      text-align: center;
+      color: var(--accent);
+    }
+    .btn-group {
+      display: flex;
+      gap: 1.5em;
+      margin-bottom: 2em;
+      width: 100%;
+      justify-content: center;
+    }
+    button {
+      padding: 1em 2.2em;
+      font-size: 1.1em;
+      border-radius: 2em;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(166,124,82,0.11);
+      transition: background 0.14s, color 0.14s, transform 0.10s;
+      outline: none;
+    }
+    .btn-si {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-si:active { background: var(--accent); }
+    .btn-no {
+      background: var(--secondary);
+      color: var(--danger);
+      border: 1.5px solid var(--danger);
+    }
+    .btn-no:active { background: var(--danger); color: #fff;}
+    section {
+      width: 100%;
+      margin-top: 2em;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+      max-width: 430px;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+    }
+    .thanks {
+      background: var(--success);
+      border-radius: 1em;
+      padding: 2em 1em 2.5em 1em;
+      margin-top: 1.5em;
+      text-align: center;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(166,124,82,0.10);
+    }
+    .thanks-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 0.6em;
+      color: var(--accent);
+    }
+    .thanks-instruction {
+      margin: 1.2em 0 1.6em 0;
+      font-size: 1.04em;
+      color: var(--accent);
+    }
+    .wa-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1em;
+      border-radius: 2em;
+      border: none;
+      font-weight: 600;
+      margin-top: 0.5em;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(37,211,102,0.07);
+      transition: background 0.2s;
+    }
+    .wa-btn:active { background: #128C7E; }
+    .instructions {
+      background: var(--secondary);
+      border-radius: 1em;
+      padding: 2em 1em 2.5em 1em;
+      margin-top: 1.5em;
+      text-align: center;
+      color: var(--danger);
+      box-shadow: 0 4px 12px rgba(166,124,82,0.10);
+    }
+    .instructions-title {
+      font-size: 1.22em;
+      font-weight: bold;
+      margin-bottom: 0.7em;
+      color: var(--danger);
+    }
+    .instructions-text {
+      margin: 0.8em 0 1.5em 0;
+      font-size: 1.04em;
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1.5em 0.5em 0.8em 0.5em; }
+      .brand-title { font-size: 1.5em; }
+      .thanks, .instructions { padding: 1.2em 0.5em 1.6em 0.5em; }
+      button, .wa-btn { font-size: 1em; padding: 0.9em 1.3em; }
+      .btn-group { gap: 0.7em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="brand-title">Carotone</div>
+    <div class="question">¿Has hecho una compra de nuestra marca?</div>
+    <div class="btn-group">
+      <button id="btn-si" class="btn-si" aria-label="Sí, he comprado Carotone">Sí</button>
+      <button id="btn-no" class="btn-no" aria-label="No, aún no he comprado">No</button>
+    </div>
+    <!-- Sección de Gracias -->
+    <section id="section-thanks" aria-live="polite">
+      <div class="thanks">
+        <div class="thanks-title">¡Gracias por tu compra! 🥕</div>
+        <div class="thanks-instruction">
+          Vuelve al chat de WhatsApp para continuar recibiendo tus beneficios exclusivos.
+        </div>
+        <a class="wa-btn" href="https://wa.me/5491123456789" target="_blank" rel="noopener">Volver al chat de WhatsApp</a>
+      </div>
+    </section>
+    <!-- Sección de Instrucciones -->
+    <section id="section-instructions" aria-live="polite">
+      <div class="instructions">
+        <div class="instructions-title">¿Aún no has hecho tu pedido?</div>
+        <div class="instructions-text">
+          Haz click en el botón de abajo para terminar tu pedido por WhatsApp y obtener los productos Carotone.
+        </div>
+        <a class="wa-btn" href="https://wa.me/5491123456789" target="_blank" rel="noopener">Finalizar pedido por WhatsApp</a>
+      </div>
+    </section>
+  </div>
+  <script>
+    // IDs y secciones
+    const btnSi = document.getElementById('btn-si');
+    const btnNo = document.getElementById('btn-no');
+    const sectionThanks = document.getElementById('section-thanks');
+    const sectionInstructions = document.getElementById('section-instructions');
+    // Scroll y tracking
+    btnSi.addEventListener('click', function() {
+      // Evento de compra a Meta Pixel
+      if(window.fbq) fbq('track', 'Purchase', { value: 1.00, currency: 'USD' });
+      sectionThanks.classList.add('active');
+      sectionInstructions.classList.remove('active');
+      setTimeout(() => {
+        sectionThanks.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    });
+    btnNo.addEventListener('click', function() {
+      sectionThanks.classList.remove('active');
+      sectionInstructions.classList.add('active');
+      setTimeout(() => {
+        sectionInstructions.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    });
+  </script>
+</body>
+</html>
