@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmación de Compra Carotone</title>
+    <title>Confirmación de Compra - Carotone</title>
     <meta name="description" content="Confirma tu compra de productos Carotone">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -19,25 +16,15 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); // Reemplaza con tu ID de píxel real
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript>
+    <img height="1" width="1" style="display:none" 
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+    </noscript>
     <!-- End Meta Pixel Code -->
-    
     <style>
-        :root {
-            --color-primary: #8B4513;
-            --color-secondary: #D2B48C;
-            --color-accent: #A0522D;
-            --color-light: #F5F5DC;
-            --color-dark: #3E2723;
-            --color-success: #4CAF50;
-            --color-warning: #FF9800;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -46,493 +33,337 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f5dc 0%, #e6d7b3 100%);
-            min-height: 100vh;
-            color: var(--color-dark);
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8e0d1 100%);
+            color: #5a4a42;
+            line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 100%;
             padding: 20px;
-            margin: 0 auto;
+            position: relative;
         }
         
         header {
             text-align: center;
             padding: 30px 20px;
-            position: relative;
+            background: rgba(139, 125, 96, 0.1);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .logo-container {
+        .logo {
             width: 120px;
             height: 120px;
             margin: 0 auto 20px;
-            background: var(--color-light);
+            background: #c4a77d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 5px solid var(--color-primary);
-            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-        }
-        
-        .logo {
-            font-size: 3rem;
-            color: var(--color-primary);
+            color: white;
+            font-size: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: var(--color-primary);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #5a4a42;
+            font-weight: 600;
         }
         
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--color-accent);
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .main-content {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.15);
-            margin: 20px auto;
+        .intro-text {
+            font-size: 16px;
             max-width: 500px;
-            text-align: center;
+            margin: 0 auto 25px;
+            color: #7d6d5f;
         }
         
         .question {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: var(--color-dark);
-            font-weight: 600;
+            text-align: center;
+            font-size: 22px;
+            margin: 25px 0;
+            font-weight: 500;
+            color: #5a4a42;
         }
         
-        .buttons-container {
+        .buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin: 40px 0;
             flex-wrap: wrap;
-            margin-bottom: 40px;
         }
         
         .btn {
-            padding: 16px 35px;
+            padding: 16px 40px;
+            font-size: 18px;
             border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: none;
-            outline: none;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 150px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn i {
-            margin-right: 10px;
-            font-size: 1.3rem;
+            gap: 10px;
         }
         
         .btn-yes {
-            background: var(--color-success);
+            background: #8d6e63;
             color: white;
+        }
+        
+        .btn-yes:hover {
+            background: #6d4c41;
+            transform: translateY(-3px);
         }
         
         .btn-no {
-            background: var(--color-warning);
+            background: #a1887f;
             color: white;
         }
         
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        .btn:active {
-            transform: translateY(0);
+        .btn-no:hover {
+            background: #7d6d5f;
+            transform: translateY(-3px);
         }
         
         .section {
-            padding: 60px 20px;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            visibility: hidden;
+        }
+        
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+            position: relative;
         }
         
         .thank-you {
-            background: linear-gradient(135deg, #d2b48c 0%, #8b4513 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .thank-you-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #d7ccc8 0%, #bcaaa4 100%);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
         
-        .thank-you h2 {
-            font-size: 2.5rem;
+        .instructions {
+            background: linear-gradient(135deg, #d7ccc8 0%, #bcaaa4 100%);
+            border-radius: 20px;
+        }
+        
+        .section-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .section-icon {
+            font-size: 70px;
+            color: #5d4037;
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 32px;
             margin-bottom: 20px;
+            color: #4e342e;
         }
         
-        .thank-you p {
-            font-size: 1.2rem;
+        .section-text {
+            font-size: 18px;
             margin-bottom: 30px;
-            line-height: 1.6;
+            color: #5a4a42;
         }
         
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
             background: #25D366;
             color: white;
-            padding: 15px 30px;
             border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 10px;
-            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
         .whatsapp-btn:hover {
-            transform: scale(1.05);
             background: #128C7E;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        
-        .instructions {
-            background: linear-gradient(135deg, #f5f5dc 0%, #d2b48c 100%);
-            text-align: center;
-        }
-        
-        .instructions-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.2);
-        }
-        
-        .instructions h2 {
-            font-size: 2.2rem;
-            color: var(--color-primary);
-            margin-bottom: 25px;
-        }
-        
-        .steps {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        
-        .step {
-            display: flex;
-            margin-bottom: 25px;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background: var(--color-primary);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-text {
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-        
-        .step-text strong {
-            color: var(--color-accent);
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            background: var(--color-primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid var(--color-primary);
-        }
-        
-        .back-btn i {
-            margin-right: 8px;
-        }
-        
-        .back-btn:hover {
-            background: transparent;
-            color: var(--color-primary);
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--color-dark);
-            font-size: 0.9rem;
+            transform: translateY(-3px);
         }
         
         .product-showcase {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 15px;
             margin: 40px 0;
+            flex-wrap: wrap;
         }
         
         .product {
             width: 100px;
             height: 100px;
+            background: #d7ccc8;
             border-radius: 15px;
-            background: linear-gradient(45deg, var(--color-secondary), var(--color-accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #5d4037;
+            font-size: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 24px;
             }
             
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .main-content {
-                padding: 20px;
+            .question {
+                font-size: 20px;
             }
             
             .btn {
-                padding: 14px 25px;
-                min-width: 130px;
-                font-size: 1.1rem;
+                padding: 14px 35px;
+                font-size: 16px;
             }
             
-            .thank-you h2 {
-                font-size: 2rem;
+            .section-title {
+                font-size: 28px;
             }
             
-            .instructions h2 {
-                font-size: 1.8rem;
+            .section-text {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo-container">
-                <i class="fas fa-carrot logo"></i>
-            </div>
-            <h1>Carotone</h1>
-            <p class="subtitle">Productos naturales para una piel radiante y saludable</p>
-        </header>
-        
-        <section id="main-section" class="section">
-            <div class="main-content">
-                <p class="question">¿Ya has hecho tu compra de productos Carotone?</p>
-                
-                <div class="product-showcase">
-                    <div class="product">Crema</div>
-                    <div class="product">Serum</div>
-                    <div class="product">Protector</div>
+        <!-- Sección Principal -->
+        <section id="main" class="section active">
+            <header>
+                <div class="logo">
+                    <i class="fas fa-carrot"></i>
                 </div>
-                
-                <div class="buttons-container">
-                    <button id="yes-btn" class="btn btn-yes">
-                        <i class="fas fa-check"></i> Sí
-                    </button>
-                    <button id="no-btn" class="btn btn-no">
-                        <i class="fas fa-times"></i> No
-                    </button>
-                </div>
-                
-                <p>Tu opinión nos ayuda a mejorar nuestro servicio</p>
+                <h1>¡Gracias por elegir Carotone!</h1>
+                <p class="intro-text">Estamos encantados de que hayas elegido nuestros productos para cuidar tu piel. Por favor, confirma si ya has realizado tu compra.</p>
+            </header>
+            
+            <div class="product-showcase">
+                <div class="product"><i class="fas fa-spa"></i></div>
+                <div class="product"><i class="fas fa-pump-soap"></i></div>
+                <div class="product"><i class="fas fa-capsules"></i></div>
             </div>
+            
+            <h2 class="question">¿Ya realizaste tu compra de Carotone?</h2>
+            
+            <div class="buttons">
+                <button id="yesBtn" class="btn btn-yes">
+                    <i class="fas fa-check"></i> Sí
+                </button>
+                <button id="noBtn" class="btn btn-no">
+                    <i class="fas fa-times"></i> No
+                </button>
+            </div>
+            
+            <footer style="margin-top: auto; padding: 20px; color: #7d6d5f;">
+                <p>Carotone - Productos naturales para una piel radiante</p>
+            </footer>
         </section>
         
-        <section id="thank-you-section" class="section thank-you">
-            <div class="thank-you-content">
-                <h2><i class="fas fa-heart"></i> ¡Gracias por tu compra!</h2>
-                <p>Tu apoyo significa mucho para nosotros. Estamos comprometidos a brindarte productos de la más alta calidad para el cuidado de tu piel.</p>
-                <p>Por favor, vuelve al chat de WhatsApp para que podamos atender cualquier consulta adicional sobre tu pedido.</p>
+        <!-- Sección de Agradecimiento -->
+        <section id="thank-you" class="section">
+            <div class="section-content">
+                <div class="section-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="section-title">¡Gracias por tu compra!</h2>
+                <p class="section-text">Tu compra de productos Carotone ha sido confirmada. Estamos preparando tu pedido con mucho cuidado.</p>
+                <p class="section-text">Para cualquier consulta sobre tu compra o seguimiento de tu pedido, contáctanos por WhatsApp:</p>
                 
-                <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Volver a WhatsApp
+                <a href="https://wa.me/1234567890?text=Hola%20Carotone,%20quiero%20consultar%20sobre%20mi%20compra" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Volver al Chat
                 </a>
             </div>
         </section>
         
-        <section id="instructions-section" class="section instructions">
-            <div class="instructions-content">
-                <h2><i class="fas fa-shopping-cart"></i> Completa tu pedido</h2>
-                <p>Sigue estos sencillos pasos para finalizar tu compra de productos Carotone:</p>
-                
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-text">Haz clic en el botón de <strong>WhatsApp</strong> para contactar con nuestro equipo de ventas</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-text">Indica los <strong>productos Carotone</strong> que deseas adquirir</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-text">Proporciona tu <strong>dirección de entrega</strong> y método de pago preferido</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-text">Recibe la <strong>confirmación</strong> de tu pedido y los detalles de entrega</div>
-                    </div>
+        <!-- Sección de Instrucciones -->
+        <section id="instructions" class="section">
+            <div class="section-content">
+                <div class="section-icon">
+                    <i class="fas fa-shopping-cart"></i>
                 </div>
+                <h2 class="section-title">Termina tu pedido</h2>
+                <p class="section-text">Si aún no has completado tu compra de Carotone, puedes finalizar tu pedido directamente por WhatsApp.</p>
+                <p class="section-text">Nuestros asesores están disponibles para ayudarte con tu compra y resolver cualquier duda que tengas sobre nuestros productos.</p>
                 
-                <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                <a href="https://wa.me/1234567890?text=Hola%20Carotone,%20quiero%20comprar%20sus%20productos" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Completar Pedido
                 </a>
-                
-                <div style="margin-top: 30px;">
-                    <a href="#main-section" class="back-btn">
-                        <i class="fas fa-arrow-left"></i> Volver
-                    </a>
-                </div>
             </div>
         </section>
-        
-        <footer class="footer">
-            <p>© 2023 Carotone. Todos los derechos reservados.</p>
-            <p>Productos naturales para el cuidado de la piel</p>
-        </footer>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Configurar las secciones
-            const thankYouSection = document.getElementById('thank-you-section');
-            const instructionsSection = document.getElementById('instructions-section');
+            const mainSection = document.getElementById('main');
+            const thankYouSection = document.getElementById('thank-you');
+            const instructionsSection = document.getElementById('instructions');
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
             
-            // Ocultar las secciones al inicio
-            thankYouSection.style.display = 'none';
-            instructionsSection.style.display = 'none';
-            
-            // Botón "Sí"
-            document.getElementById('yes-btn').addEventListener('click', function() {
-                // Desplazar a la sección de agradecimiento
-                thankYouSection.style.display = 'flex';
-                thankYouSection.scrollIntoView({behavior: 'smooth'});
+            // Función para cambiar de sección con animación
+            function showSection(section) {
+                // Ocultar todas las secciones
+                document.querySelectorAll('.section').forEach(sec => {
+                    sec.classList.remove('active');
+                });
                 
+                // Mostrar la sección deseada
+                section.classList.add('active');
+                
+                // Desplazar al inicio de la página
+                window.scrollTo(0, 0);
+            }
+            
+            // Evento para el botón SÍ
+            yesBtn.addEventListener('click', function() {
                 // Enviar evento de compra a Meta Pixel
                 fbq('track', 'Purchase', {
-                    value: 1.00,
+                    value: 0.00,
                     currency: 'USD',
-                    content_name: 'Carotone Product'
+                    content_name: 'Carotone Product',
+                    content_type: 'product'
                 });
                 
-                // Animación adicional
-                gsap.from(thankYouSection, {
-                    duration: 1,
-                    opacity: 0,
-                    y: 50,
-                    ease: "power3.out"
-                });
+                // Mostrar sección de agradecimiento
+                showSection(thankYouSection);
             });
             
-            // Botón "No"
-            document.getElementById('no-btn').addEventListener('click', function() {
-                // Desplazar a la sección de instrucciones
-                instructionsSection.style.display = 'flex';
-                instructionsSection.scrollIntoView({behavior: 'smooth'});
-                
-                // Animación adicional
-                gsap.from(instructionsSection, {
-                    duration: 1,
-                    opacity: 0,
-                    y: 50,
-                    ease: "power3.out"
-                });
-            });
-            
-            // Animaciones iniciales
-            gsap.from('.logo-container', {
-                duration: 1,
-                scale: 0,
-                rotation: 360,
-                ease: "back.out(1.7)"
-            });
-            
-            gsap.from('h1', {
-                duration: 1,
-                y: -30,
-                opacity: 0,
-                delay: 0.3,
-                ease: "power3.out"
-            });
-            
-            gsap.from('.subtitle', {
-                duration: 0.8,
-                y: -20,
-                opacity: 0,
-                delay: 0.5,
-                ease: "power3.out"
-            });
-            
-            gsap.from('.main-content', {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                delay: 0.7,
-                ease: "power3.out"
-            });
-            
-            gsap.from('.btn', {
-                duration: 0.5,
-                scale: 0,
-                opacity: 0,
-                stagger: 0.1,
-                delay: 1.2,
-                ease: "back.out(1.7)"
+            // Evento para el botón NO
+            noBtn.addEventListener('click', function() {
+                // Mostrar sección de instrucciones
+                showSection(instructionsSection);
             });
         });
     </script>
