@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
-  <title>¿Compraste Carotone?</title>
-  <meta name="theme-color" content="#A67C52">
-  <meta name="description" content="Confirma tu compra de Carotone y continúa tu experiencia exclusiva.">
-  <!-- Meta Pixel Code -->
-  <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra Carotone</title>
+    <meta name="description" content="Confirma tu compra de productos Carotone">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -16,213 +19,522 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'REEMPLAZA_POR_TU_PIXEL_ID'); // Reemplaza con tu ID de Pixel real
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
     fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=REEMPLAZA_POR_TU_PIXEL_ID&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-  <style>
-    :root {
-      --primary: #A67C52;
-      --secondary: #D9C3A1;
-      --accent: #6F4E37;
-      --background: #FAF3E3;
-      --success: #C1B497;
-      --danger: #7D5E3C;
-    }
-    html,body {
-      margin: 0; padding: 0;
-      background: var(--background);
-      font-family: 'Montserrat', Arial, sans-serif;
-      min-height: 100vh;
-      color: var(--accent);
-      font-size: 18px;
-      scroll-behavior: smooth;
-    }
-    .container {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 2.5em 1em 1em 1em;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .brand-title {
-      font-size: 2.2em;
-      font-weight: bold;
-      color: var(--primary);
-      margin-bottom: 0.5em;
-      letter-spacing: 0.05em;
-      text-align: center;
-    }
-    .question {
-      font-size: 1.3em;
-      margin-bottom: 2.5em;
-      font-weight: 500;
-      text-align: center;
-      color: var(--accent);
-    }
-    .btn-group {
-      display: flex;
-      gap: 1.5em;
-      margin-bottom: 2em;
-      width: 100%;
-      justify-content: center;
-    }
-    button {
-      padding: 1em 2.2em;
-      font-size: 1.1em;
-      border-radius: 2em;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(166,124,82,0.11);
-      transition: background 0.14s, color 0.14s, transform 0.10s;
-      outline: none;
-    }
-    .btn-si {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-si:active { background: var(--accent); }
-    .btn-no {
-      background: var(--secondary);
-      color: var(--danger);
-      border: 1.5px solid var(--danger);
-    }
-    .btn-no:active { background: var(--danger); color: #fff;}
-    section {
-      width: 100%;
-      margin-top: 2em;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.4s;
-      max-width: 430px;
-    }
-    section.active {
-      display: block;
-      opacity: 1;
-    }
-    .thanks {
-      background: var(--success);
-      border-radius: 1em;
-      padding: 2em 1em 2.5em 1em;
-      margin-top: 1.5em;
-      text-align: center;
-      color: var(--primary);
-      box-shadow: 0 4px 12px rgba(166,124,82,0.10);
-    }
-    .thanks-title {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 0.6em;
-      color: var(--accent);
-    }
-    .thanks-instruction {
-      margin: 1.2em 0 1.6em 0;
-      font-size: 1.04em;
-      color: var(--accent);
-    }
-    .wa-btn {
-      display: inline-block;
-      background: #25D366;
-      color: #fff;
-      padding: 1em 2em;
-      font-size: 1em;
-      border-radius: 2em;
-      border: none;
-      font-weight: 600;
-      margin-top: 0.5em;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(37,211,102,0.07);
-      transition: background 0.2s;
-    }
-    .wa-btn:active { background: #128C7E; }
-    .instructions {
-      background: var(--secondary);
-      border-radius: 1em;
-      padding: 2em 1em 2.5em 1em;
-      margin-top: 1.5em;
-      text-align: center;
-      color: var(--danger);
-      box-shadow: 0 4px 12px rgba(166,124,82,0.10);
-    }
-    .instructions-title {
-      font-size: 1.22em;
-      font-weight: bold;
-      margin-bottom: 0.7em;
-      color: var(--danger);
-    }
-    .instructions-text {
-      margin: 0.8em 0 1.5em 0;
-      font-size: 1.04em;
-      color: var(--accent);
-    }
-    @media (max-width: 600px) {
-      .container { padding: 1.5em 0.5em 0.8em 0.5em; }
-      .brand-title { font-size: 1.5em; }
-      .thanks, .instructions { padding: 1.2em 0.5em 1.6em 0.5em; }
-      button, .wa-btn { font-size: 1em; padding: 0.9em 1.3em; }
-      .btn-group { gap: 0.7em; }
-    }
-  </style>
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D2B48C;
+            --color-accent: #A0522D;
+            --color-light: #F5F5DC;
+            --color-dark: #3E2723;
+            --color-success: #4CAF50;
+            --color-warning: #FF9800;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f5dc 0%, #e6d7b3 100%);
+            min-height: 100vh;
+            color: var(--color-dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: var(--color-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--color-primary);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+        
+        .logo {
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-content {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.15);
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .question {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .btn-yes {
+            background: var(--color-success);
+            color: white;
+        }
+        
+        .btn-no {
+            background: var(--color-warning);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .section {
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thank-you {
+            background: linear-gradient(135deg, #d2b48c 0%, #8b4513 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .thank-you-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .thank-you h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            background: #128C7E;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .instructions {
+            background: linear-gradient(135deg, #f5f5dc 0%, #d2b48c 100%);
+            text-align: center;
+        }
+        
+        .instructions-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.2);
+        }
+        
+        .instructions h2 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+        }
+        
+        .steps {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: var(--color-primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .step-text strong {
+            color: var(--color-accent);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-primary);
+        }
+        
+        .back-btn i {
+            margin-right: 8px;
+        }
+        
+        .back-btn:hover {
+            background: transparent;
+            color: var(--color-primary);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--color-dark);
+            font-size: 0.9rem;
+        }
+        
+        .product-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .product {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 14px 25px;
+                min-width: 130px;
+                font-size: 1.1rem;
+            }
+            
+            .thank-you h2 {
+                font-size: 2rem;
+            }
+            
+            .instructions h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="brand-title">Carotone</div>
-    <div class="question">¿Has hecho una compra de nuestra marca?</div>
-    <div class="btn-group">
-      <button id="btn-si" class="btn-si" aria-label="Sí, he comprado Carotone">Sí</button>
-      <button id="btn-no" class="btn-no" aria-label="No, aún no he comprado">No</button>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-carrot logo"></i>
+            </div>
+            <h1>Carotone</h1>
+            <p class="subtitle">Productos naturales para una piel radiante y saludable</p>
+        </header>
+        
+        <section id="main-section" class="section">
+            <div class="main-content">
+                <p class="question">¿Ya has hecho tu compra de productos Carotone?</p>
+                
+                <div class="product-showcase">
+                    <div class="product">Crema</div>
+                    <div class="product">Serum</div>
+                    <div class="product">Protector</div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button id="yes-btn" class="btn btn-yes">
+                        <i class="fas fa-check"></i> Sí
+                    </button>
+                    <button id="no-btn" class="btn btn-no">
+                        <i class="fas fa-times"></i> No
+                    </button>
+                </div>
+                
+                <p>Tu opinión nos ayuda a mejorar nuestro servicio</p>
+            </div>
+        </section>
+        
+        <section id="thank-you-section" class="section thank-you">
+            <div class="thank-you-content">
+                <h2><i class="fas fa-heart"></i> ¡Gracias por tu compra!</h2>
+                <p>Tu apoyo significa mucho para nosotros. Estamos comprometidos a brindarte productos de la más alta calidad para el cuidado de tu piel.</p>
+                <p>Por favor, vuelve al chat de WhatsApp para que podamos atender cualquier consulta adicional sobre tu pedido.</p>
+                
+                <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Volver a WhatsApp
+                </a>
+            </div>
+        </section>
+        
+        <section id="instructions-section" class="section instructions">
+            <div class="instructions-content">
+                <h2><i class="fas fa-shopping-cart"></i> Completa tu pedido</h2>
+                <p>Sigue estos sencillos pasos para finalizar tu compra de productos Carotone:</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Haz clic en el botón de <strong>WhatsApp</strong> para contactar con nuestro equipo de ventas</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Indica los <strong>productos Carotone</strong> que deseas adquirir</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Proporciona tu <strong>dirección de entrega</strong> y método de pago preferido</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Recibe la <strong>confirmación</strong> de tu pedido y los detalles de entrega</div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+                
+                <div style="margin-top: 30px;">
+                    <a href="#main-section" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2023 Carotone. Todos los derechos reservados.</p>
+            <p>Productos naturales para el cuidado de la piel</p>
+        </footer>
     </div>
-    <!-- Sección de Gracias -->
-    <section id="section-thanks" aria-live="polite">
-      <div class="thanks">
-        <div class="thanks-title">¡Gracias por tu compra! 🥕</div>
-        <div class="thanks-instruction">
-          Vuelve al chat de WhatsApp para continuar recibiendo tus beneficios exclusivos.
-        </div>
-        <a class="wa-btn" href="https://wa.me/5491123456789" target="_blank" rel="noopener">Volver al chat de WhatsApp</a>
-      </div>
-    </section>
-    <!-- Sección de Instrucciones -->
-    <section id="section-instructions" aria-live="polite">
-      <div class="instructions">
-        <div class="instructions-title">¿Aún no has hecho tu pedido?</div>
-        <div class="instructions-text">
-          Haz click en el botón de abajo para terminar tu pedido por WhatsApp y obtener los productos Carotone.
-        </div>
-        <a class="wa-btn" href="https://wa.me/5491123456789" target="_blank" rel="noopener">Finalizar pedido por WhatsApp</a>
-      </div>
-    </section>
-  </div>
-  <script>
-    // IDs y secciones
-    const btnSi = document.getElementById('btn-si');
-    const btnNo = document.getElementById('btn-no');
-    const sectionThanks = document.getElementById('section-thanks');
-    const sectionInstructions = document.getElementById('section-instructions');
-    // Scroll y tracking
-    btnSi.addEventListener('click', function() {
-      // Evento de compra a Meta Pixel
-      if(window.fbq) fbq('track', 'Purchase', { value: 1.00, currency: 'USD' });
-      sectionThanks.classList.add('active');
-      sectionInstructions.classList.remove('active');
-      setTimeout(() => {
-        sectionThanks.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 120);
-    });
-    btnNo.addEventListener('click', function() {
-      sectionThanks.classList.remove('active');
-      sectionInstructions.classList.add('active');
-      setTimeout(() => {
-        sectionInstructions.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 120);
-    });
-  </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar las secciones
+            const thankYouSection = document.getElementById('thank-you-section');
+            const instructionsSection = document.getElementById('instructions-section');
+            
+            // Ocultar las secciones al inicio
+            thankYouSection.style.display = 'none';
+            instructionsSection.style.display = 'none';
+            
+            // Botón "Sí"
+            document.getElementById('yes-btn').addEventListener('click', function() {
+                // Desplazar a la sección de agradecimiento
+                thankYouSection.style.display = 'flex';
+                thankYouSection.scrollIntoView({behavior: 'smooth'});
+                
+                // Enviar evento de compra a Meta Pixel
+                fbq('track', 'Purchase', {
+                    value: 1.00,
+                    currency: 'USD',
+                    content_name: 'Carotone Product'
+                });
+                
+                // Animación adicional
+                gsap.from(thankYouSection, {
+                    duration: 1,
+                    opacity: 0,
+                    y: 50,
+                    ease: "power3.out"
+                });
+            });
+            
+            // Botón "No"
+            document.getElementById('no-btn').addEventListener('click', function() {
+                // Desplazar a la sección de instrucciones
+                instructionsSection.style.display = 'flex';
+                instructionsSection.scrollIntoView({behavior: 'smooth'});
+                
+                // Animación adicional
+                gsap.from(instructionsSection, {
+                    duration: 1,
+                    opacity: 0,
+                    y: 50,
+                    ease: "power3.out"
+                });
+            });
+            
+            // Animaciones iniciales
+            gsap.from('.logo-container', {
+                duration: 1,
+                scale: 0,
+                rotation: 360,
+                ease: "back.out(1.7)"
+            });
+            
+            gsap.from('h1', {
+                duration: 1,
+                y: -30,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+            
+            gsap.from('.subtitle', {
+                duration: 0.8,
+                y: -20,
+                opacity: 0,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+            
+            gsap.from('.main-content', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                delay: 0.7,
+                ease: "power3.out"
+            });
+            
+            gsap.from('.btn', {
+                duration: 0.5,
+                scale: 0,
+                opacity: 0,
+                stagger: 0.1,
+                delay: 1.2,
+                ease: "back.out(1.7)"
+            });
+        });
+    </script>
 </body>
 </html>
